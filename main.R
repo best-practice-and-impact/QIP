@@ -1,8 +1,9 @@
 library(yaml)
-library(xlsx)
+library(openxlsx)
 library(magrittr)
 library(dplyr)
 library(tidyr)
+library(janitor)
 source("collate_sheets.R")
 
 config <- yaml::read_yaml("config.yml")

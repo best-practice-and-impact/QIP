@@ -1,5 +1,5 @@
 input_path: "D:/QIP_data"
-output_path: "D:/QIP_outputs"
+output_path: "D:/QIP_outputs/all_risk_data.csv"
 sheet_names: ["quality_risks_and_issues", "Actions"]
 themes: 
   dummy_theme:

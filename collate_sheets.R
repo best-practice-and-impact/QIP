@@ -5,9 +5,11 @@ read_sheets <- function(sheet_name, config) {
   
   files <- list.files(config$input_path)
   
-  files <- paste0(config$input_path, "/",  files)
+  if (length(grep("~", files)) > 1) {
+    files <- files[-grep("~", files)]
+  }
   
-  files <- files[-grep("~", files)]
+  files <- paste0(config$input_path, "/",  files)
   
   all_tables <- lapply(files, function(file) {
     data <- openxlsx::read.xlsx(file, sheet = sheet_name)
@@ -17,8 +19,10 @@ read_sheets <- function(sheet_name, config) {
     if (nrow(data) > 0) {
       
       data %<>% 
-        dplyr::mutate(divsion = colnames(division_info)[2], .before = everything(),
-                      dplyr::across(dplyr::everything(), as.character))
+        dplyr::mutate(division = colnames(division_info)[2], .before = dplyr::everything(),
+                      dplyr::across(dplyr::everything(), as.character)) %>% 
+        janitor::clean_names() %>% 
+        tidyr::drop_na(risk_issue_number)
       
       return(data)
     }
@@ -29,8 +33,21 @@ read_sheets <- function(sheet_name, config) {
   
 }
 
-save_sheet <- function(config) {
+make_joined_data <- function(config) {
+  data <- list()
   for (sheet_name in config$sheet_names) {
-    write.csv(read_sheets(sheet_name, config), paste0(config$output_path, "/", sheet_name, ".csv"))
+    data[[sheet_name]] <- read_sheets(sheet_name, config)
   }
+  
+   # Not sure how metrics fits into this....
+  if("quality_risks_and_issues" %in% config$sheet_names & "Actions" %in% config$sheet_names){
+    all_risk_data <- dplyr::full_join(data$quality_risks_and_issues, 
+                               data$Actions, 
+                               by = c("division", "risk_issue_number"),
+                               multiple = "all")
+    write.csv(all_risk_data, config$output_path)
+  }
+  
 }
+
+
