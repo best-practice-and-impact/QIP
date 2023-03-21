@@ -24,7 +24,7 @@ read_sheets <- function(sheet_name, config) {
       data %<>% 
         dplyr::mutate(divsion = colnames(division_info)[2], .before = everything(),
                       dplyr::across(dplyr::everything(), as.character))
-      
+
       return(data)
     }
     
@@ -35,3 +35,7 @@ read_sheets <- function(sheet_name, config) {
 }
 
 # TODO: load all relevant sheets and save to output folder (outputs/) - folder name should come from config file. Save as CSV
+
+for (sheet_name in config$sheet_names) {
+  write.csv(read_sheets(sheet_name, config), paste0(config$output_path, "/", sheet_name, ".csv"))
+}
