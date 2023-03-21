@@ -1,4 +1,5 @@
 library(yaml)
+library(xlsx)
 library(magrittr)
 
 config <- yaml::read_yaml("config.yml")
@@ -10,7 +11,7 @@ read_sheets <- function(sheet_name, config) {
   
   files <- paste0(config$input_path, "/",  files)
   
-  # TODO: remove filenames with "~"
+  files <- files[-grep("~", files)]
   
   all_tables <- lapply(files, function(file) {
     data <- openxlsx::read.xlsx(file, sheet = sheet_name)
