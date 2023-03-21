@@ -21,12 +21,9 @@ read_sheets <- function(sheet_name, config) {
     # Drop empty data sets because some divisions have no actions
     if (nrow(data) > 0) {
       
-      data$division <- colnames(division_info)[2]
-      
       data %<>% 
-        dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
-      
-      # TODO: reorder data so that division name is the first column
+        dplyr::mutate(divsion = colnames(division_info)[2], .before = everything(),
+                      dplyr::across(dplyr::everything(), as.character))
       
       return(data)
     }
