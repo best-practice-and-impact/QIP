@@ -1,6 +1,7 @@
 library(yaml)
 library(xlsx)
 library(magrittr)
+library(dplyr)
 
 config <- yaml::read_yaml("config.yml")
 
@@ -17,16 +18,19 @@ read_sheets <- function(sheet_name, config) {
     data <- openxlsx::read.xlsx(file, sheet = sheet_name)
     division_info <- openxlsx::read.xlsx(file, sheet = "Division_info")
     
-    # TODO: deal with empty sheets
+    # Drop empty data sets because some divisions have no actions
+    if (nrow(data) > 0) {
+      
+      data$division <- colnames(division_info)[2]
+      
+      data %<>% 
+        dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
+      
+      # TODO: reorder data so that division name is the first column
+      
+      return(data)
+    }
     
-    data$division <- colnames(division_info)[2]
-    
-    data %<>% 
-      dplyr::mutate(dplyr::across(dplyr::everything(), as.character))
-    
-    # TODO: reorder data so that division name is the first column
-    
-    return(data)
   })
   
   do.call(dplyr::bind_rows, all_tables)
