@@ -9,6 +9,100 @@ themes:
 support_owner:
   idicator_columns: ["title", "description", "consequence", "need", "^action$", "definition_of_done"]
   owners:
-    dummy_owner_1: ["z", "y"]
-    dummy_owner_2: ["x", "w"]
-    RAP: ["^rap$", "reproduc", "automat", "code"]
+    MQD_support_RAP: [
+      "methodology",
+      "automation",
+      "coding",
+      "method",
+      "code",
+      "Quality and Improvement Division",
+      "reproducible",
+      "non-reproducible",
+      "^DAP$",
+      "Data Access Platform",
+      "DAPCATS",
+      "imputation",
+      "modelling",
+      "quality",
+      "training",
+      "best practice",
+      "good practice",
+      "Analytical Standards and Pipelines",
+      "BPAI",
+      "DQhub"
+    ]
+    Digital_Service_Technology: [
+      "Legacy systems",
+      "technology",
+      "^IT$",
+      "DST",
+      "scripts",
+      "SQL",
+      "SAS",
+      "Excel",
+      "Existing systems",
+      "non-automated systems",
+      "Non-strategic systems",
+      "^DAP$"
+    ]
+    Publishing: [
+      "Articles",
+      "Bulletins",
+      "word count",
+      "QMI"
+    ]
+    Surveys: [
+      "Surveys",
+      "Response Rate",
+      "Decline",
+      "Sample",
+      "Sample size",
+      "Falling",
+      "coverage",
+      "underreporting",
+      "BDOD",
+      "social surveys",
+      "^LMS$"
+    ]
+    Data_Growth_Operations_or_Data_Acquisitions_Operations: [
+      "Data suppliers",
+      "Data Growth & Operations",
+      "DGO",
+      "DAO",
+      "Data Acquisitions Operations",
+      "Data availability",
+      "Data Access",
+      "data sources"
+    ]
+    communication_and_digital_publishing: [
+      "Tweets",
+      "Communication",
+      "communication plan",
+      "word count",
+      "Articles",
+      "Bulletins",
+      "word count",
+      "QMI",
+      "publication",
+      "publishing",
+      "^API$",
+      "web development" 
+    ]
+    people_and_business_services: [
+      "Low resourcing",
+      "recruitment",
+      "staff",
+      "resource availability",
+      "Vacancies",
+      "retention",
+      "skills",
+      "knowledge",
+      "turnover",
+      "training",
+      "capabilit"
+    ]
+    economic_statistics_change: [
+      "RDSA", 
+      "^DDS$", 
+      "economic statistics change"
+    ]
