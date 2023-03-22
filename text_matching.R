@@ -42,4 +42,14 @@ match_sub_theme <- function(col, theme_dict) {
   
 }
 
-# TODO: add concat_text_cols 
+concat_text_cols <- function(data, text_cols) {
+  
+  text_cols <- stringr::str_subset(colnames(data), paste0(text_cols, collapse = "|"))
+  
+  output <- tidyr::unite(data, "text_fields", tidyr::all_of(text_cols), sep = " ", na.rm = T) %>% 
+    select(text_fields)
+  
+  return(output)
+}
+
+

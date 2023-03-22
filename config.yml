@@ -2,12 +2,12 @@ input_path: "D:/QIP_data"
 output_path: "D:/QIP_outputs/all_risk_data.csv"
 sheet_names: ["quality_risks_and_issues", "Actions"]
 themes:
-  indicator_columns:
+  indicator_columns: ["title", "description", "consequence", "need", "action", "definition_of_done"]
   dummy_theme:
     dummy_sub_1: ["a", "b", "c"]
     dummy_sub_2: ["d", "e", "f"]
 support_owner:
-  idicator_columns: ["description", "title", "need"]
+  idicator_columns: ["title", "description", "consequence", "need", "^action$", "definition_of_done"]
   owners:
     dummy_owner_1: ["z", "y"]
     dummy_owner_2: ["x", "w"]
