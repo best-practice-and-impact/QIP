@@ -28,3 +28,5 @@ data$action_owner_division <- dplyr::case_when(
 )
 
 data$QA <- NA
+
+save_data(data, config)
