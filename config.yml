@@ -1,10 +1,14 @@
 input_path: "D:/QIP_data"
 output_path: "D:/QIP_outputs/all_risk_data.csv"
 sheet_names: ["quality_risks_and_issues", "Actions"]
-themes: 
+themes:
+  indicator_columns:
   dummy_theme:
     dummy_sub_1: ["a", "b", "c"]
     dummy_sub_2: ["d", "e", "f"]
-owner:
-  dummy_owner_1: ["z", "y"]
-  dummy_owner_2: ["x", "w"]
+support_owner:
+  idicator_columns: ["description", "title", "need"]
+  owners:
+    dummy_owner_1: ["z", "y"]
+    dummy_owner_2: ["x", "w"]
+    RAP: ["^rap$", "reproduc", "automat", "code"]
