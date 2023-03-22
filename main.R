@@ -21,9 +21,11 @@ combined_labels <- data.frame("support_function" = combine_label_cols(labels))
 data <- dplyr::bind_cols(data, combined_labels, labels)
 
 data$action_owner_division <- dplyr::case_when(
-  is.na(data$ownership_bucket) | data$ownership_bucket == "2. Control - With support" | data$ownership_bucket == "3. Outside control" ~ data$support_function,
+  is.na(data$ownership_bucket) |
+    data$ownership_bucket == "2. Control - With support" | 
+    data$ownership_bucket == "3. Outside control" |
+    data$ownership_bucket == "DQHub to decide" ~ data$support_function,
   data$ownership_bucket == "1. Control - Division" ~ data$division,
-  data$ownership_bucket == "DQHub to decide" ~ "DQHub to decide", 
   .default = data$ownership_bucket
 )
 
