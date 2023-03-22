@@ -34,7 +34,7 @@ match_sub_theme <- function(col, theme_dict) {
   
   sapply(theme_dict, function(theme) {
     
-    theme <- paste0(theme, collapse = "|")
+    theme <- paste0("(", paste0(theme, collapse = ")|("), ")")
     
     grepl(pattern = theme, x = col, ignore.case = T)
     
@@ -56,4 +56,5 @@ combine_label_cols <- function(label_df) {
   apply(label_df, 1, function(row) {
     names(row)[unlist(row)] %>% paste0(collapse = ", ")
   }) 
+  # if all flags are false then should this produce na not blank?
 }

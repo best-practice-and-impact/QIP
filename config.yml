@@ -18,7 +18,7 @@ support_owner:
       "Quality and Improvement Division",
       "reproducible",
       "non-reproducible",
-      "^DAP$",
+      "\\bDAP\\b",
       "Data Access Platform",
       "DAPCATS",
       "imputation",
@@ -30,12 +30,12 @@ support_owner:
       "Analytical Standards and Pipelines",
       "BPAI",
       "DQhub",
-      "^RAP$"
-      ]
+      "\\bRAPs?\\b"
+      ] # concider adding python and ^R$ here too
     Digital_Service_Technology: [
       "Legacy systems",
       "technology",
-      "^IT$",
+      "\\bIT\\b",
       "DST",
       "scripts",
       "SQL",
@@ -44,7 +44,7 @@ support_owner:
       "Existing systems",
       "non-automated systems",
       "Non-strategic systems",
-      "^DAP$",
+      "\\bDAP\\b",
       "transformation"
       ]
     Surveys: [
@@ -58,8 +58,8 @@ support_owner:
       "underreporting",
       "BDOD",
       "social surveys",
-      "^LMS$",
-      "^LFS$"
+      "\\bLMS\\b",
+      "\\bLFS\\b"
       ]
     Data_Growth_Operations_or_Data_Acquisitions_Operations: [
       "Data suppliers",
@@ -84,7 +84,7 @@ support_owner:
       "QMI",
       "publication",
       "publishing",
-      "^API$",
+      "\\bAPI\\b",
       "web development",
       "content",
       "coherence"
@@ -102,6 +102,6 @@ support_owner:
       ]
     economic_statistics_change: [
       "RDSA", 
-      "^DDS$", 
+      "\\bDDS\\b", 
       "economic statistics change"
       ]
