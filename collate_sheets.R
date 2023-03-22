@@ -47,7 +47,7 @@ read_sheets <- function(sheet_name, config) {
   
 }
 
-#' @title Make Joined Data
+#' @title Join Data
 #' 
 #' @description 
 #' Read and clean all sheets provided in config using `read_sheets`.
@@ -59,7 +59,7 @@ read_sheets <- function(sheet_name, config) {
 #' 
 #' @return 
 #' 
-make_joined_data <- function(config) {
+join_data <- function(config) {
   data <- list()
   for (sheet_name in config$sheet_names) {
     data[[sheet_name]] <- read_sheets(sheet_name, config)
