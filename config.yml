@@ -5,3 +5,6 @@ themes:
   dummy_theme:
     dummy_sub_1: ["a", "b", "c"]
     dummy_sub_2: ["d", "e", "f"]
+owner:
+  dummy_owner_1: ["z", "y"]
+  dummy_owner_2: ["x", "w"]
