@@ -64,9 +64,9 @@ make_joined_data <- function(config) {
    # Not sure how metrics fits into this....
   if("quality_risks_and_issues" %in% config$sheet_names & "Actions" %in% config$sheet_names){
     all_risk_data <- dplyr::full_join(data$quality_risks_and_issues, 
-                               data$Actions, 
-                               by = c("division", "risk_issue_number"),
-                               multiple = "all")
+                                      data$Actions, 
+                                      by = c("division", "risk_issue_number"),
+                                      multiple = "all")
     write.csv(all_risk_data, config$output_path)
   }
   
