@@ -5,9 +5,10 @@
 #' @title Read Sheets
 #' 
 #' @description 
-#' Read in the given sheet from all files in the input folder provided in the config. 
-#' Attach division name to all rows, coerce all columns to strings, clean col_names,
-#' and drops rows without a risk/issue number as this is used as a key later.
+#' Read in the given sheet from all files in the input folder 
+#' provided in the config.Attach division name to all rows, 
+#' coerce all columns to strings, clean col_names, and drops rows 
+#' without a risk/issue number as this is used as a key later. 
 #' Finally the cleaned data sets are all combined via bind_rows.
 #' 
 #' @param sheet_name `string` name of the sheet to be loaded
@@ -19,7 +20,7 @@ read_sheets <- function(sheet_name, config) {
   
   files <- list.files(config$input_path)
   
-  if (length(grep("~", files)) > 1) {
+  if (length(grep("~", files)) >= 1) {
     files <- files[-grep("~", files)]
   }
   
@@ -50,10 +51,10 @@ read_sheets <- function(sheet_name, config) {
 #' @title Join Data
 #' 
 #' @description 
-#' Read and clean all sheets provided in config using `read_sheets`.
-#' Where quality_risk_and_issues and Actions sheets are provided, these are joined.
-#' The joining key is `division` and `risk_issue_number`.
-#' This is written to the output path provided in the config
+#' Read and clean all sheets provided in config using `read_sheets`. Where 
+#' quality_risk_and_issues and Actions sheets are provided, these are joined. 
+#' The joining key is `division` and `risk_issue_number`. This is written to 
+#' the output path provided in the config
 #' 
 #' @param config `list` configuration, typically read in from a yaml config file
 #' 
@@ -77,7 +78,5 @@ join_data <- function(config) {
                                       multiple = "all")
     write.csv(all_risk_data, config$output_path)
   }
-  
+  return(all_risk_data)
 }
-
-
