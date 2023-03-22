@@ -7,7 +7,7 @@ themes:
     dummy_sub_1: ["a", "b", "c"]
     dummy_sub_2: ["d", "e", "f"]
 support_owner:
-  idicator_columns: ["title", "description", "consequence", "need", "^action$", "definition_of_done"]
+  idicator_columns: ["title", "description", "need", "^action$", "definition_of_done"]
   owners:
     MQD_support_RAP: [
       "methodology",
