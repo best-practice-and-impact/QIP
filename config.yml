@@ -9,7 +9,7 @@ themes:
 support_owner:
   idicator_columns: ["title", "description", "consequence", "need", "^action$", "definition_of_done"]
   owners:
-    MQD_support_RAP: [
+     MQD_support: [
       "methodology",
       "automation",
       "coding",
@@ -29,7 +29,8 @@ support_owner:
       "good practice",
       "Analytical Standards and Pipelines",
       "BPAI",
-      "DQhub"
+      "DQhub",
+      "^RAP$"
     ]
     Digital_Service_Technology: [
       "Legacy systems",
@@ -43,14 +44,10 @@ support_owner:
       "Existing systems",
       "non-automated systems",
       "Non-strategic systems",
-      "^DAP$"
+      "^DAP$",
+      "transformation"
     ]
-    Publishing: [
-      "Articles",
-      "Bulletins",
-      "word count",
-      "QMI"
-    ]
+
     Surveys: [
       "Surveys",
       "Response Rate",
@@ -62,17 +59,20 @@ support_owner:
       "underreporting",
       "BDOD",
       "social surveys",
-      "^LMS$"
+      "^LMS$",
+      "^LFS$"
     ]
     Data_Growth_Operations_or_Data_Acquisitions_Operations: [
       "Data suppliers",
       "Data Growth & Operations",
       "DGO",
       "DAO",
-      "Data Acquisitions Operations",
+      "Data Acquisitions & Operations",
       "Data availability",
       "Data Access",
-      "data sources"
+      "data sources",
+      "data owners",
+      "engagement"
     ]
     communication_and_digital_publishing: [
       "Tweets",
@@ -86,13 +86,14 @@ support_owner:
       "publication",
       "publishing",
       "^API$",
-      "web development" 
+      "web development",
+      "content",
+      "coherence"
     ]
     people_and_business_services: [
-      "Low resourcing",
+   
       "recruitment",
       "staff",
-      "resource availability",
       "Vacancies",
       "retention",
       "skills",
