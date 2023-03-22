@@ -9,7 +9,7 @@ themes:
 support_owner:
   idicator_columns: ["title", "description", "consequence", "need", "^action$", "definition_of_done"]
   owners:
-     MQD_support: [
+    MQD_support: [
       "methodology",
       "automation",
       "coding",
@@ -31,7 +31,7 @@ support_owner:
       "BPAI",
       "DQhub",
       "^RAP$"
-    ]
+      ]
     Digital_Service_Technology: [
       "Legacy systems",
       "technology",
@@ -46,8 +46,7 @@ support_owner:
       "Non-strategic systems",
       "^DAP$",
       "transformation"
-    ]
-
+      ]
     Surveys: [
       "Surveys",
       "Response Rate",
@@ -61,7 +60,7 @@ support_owner:
       "social surveys",
       "^LMS$",
       "^LFS$"
-    ]
+      ]
     Data_Growth_Operations_or_Data_Acquisitions_Operations: [
       "Data suppliers",
       "Data Growth & Operations",
@@ -73,7 +72,7 @@ support_owner:
       "data sources",
       "data owners",
       "engagement"
-    ]
+      ]
     communication_and_digital_publishing: [
       "Tweets",
       "Communication",
@@ -89,7 +88,7 @@ support_owner:
       "web development",
       "content",
       "coherence"
-    ]
+      ]
     people_and_business_services: [
    
       "recruitment",
@@ -101,9 +100,9 @@ support_owner:
       "turnover",
       "training",
       "capabilit"
-    ]
+      ]
     economic_statistics_change: [
       "RDSA", 
       "^DDS$", 
       "economic statistics change"
-    ]
+      ]
