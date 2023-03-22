@@ -35,6 +35,7 @@ read_sheets <- function(sheet_name, config) {
       
       data %<>% 
         dplyr::mutate(division = colnames(division_info)[2], .before = dplyr::everything(),
+                      # some dates included so I think the following line could be improved
                       dplyr::across(dplyr::everything(), as.character)) %>% 
         janitor::clean_names() %>% 
         tidyr::drop_na(risk_issue_number)
