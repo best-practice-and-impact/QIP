@@ -77,7 +77,23 @@ join_data <- function(config) {
                                       data$Actions, 
                                       by = c("division", "risk_issue_number"),
                                       multiple = "all")
-    write.csv(all_risk_data, config$output_path)
   }
+  
   return(all_risk_data)
+}
+
+#' @title Save data
+#' 
+#' @description 
+#' Checks if the output file path exists, and if not creates it and then saves
+#' the dataframe to a csv file.
+#' 
+#' @param config `list` configuration, typically read in from a yaml config file
+#'  
+save_data <- function(data, config) {
+  if (!dir.exists(sub('/[^/]*$', '', config$output_path))){
+    dir.create(sub('/[^/]*$', '', config$output_path))
+  }
+  
+  write.csv(data, config$output_path)
 }
