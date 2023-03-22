@@ -52,4 +52,8 @@ concat_text_cols <- function(data, text_cols) {
   return(output)
 }
 
-
+combine_label_cols <- function(label_df) {
+  apply(label_df, 1, function(row) {
+    names(row)[unlist(row)] %>% paste0(collapse = ", ")
+  }) 
+}
