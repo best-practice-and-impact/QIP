@@ -1,3 +1,7 @@
+# TODO:
+# read_sheets is doing a lot more than reading the data.
+# I think we should split this into a read and a clean
+
 #' @title Read Sheets
 #' 
 #' @description 
@@ -61,7 +65,11 @@ make_joined_data <- function(config) {
     data[[sheet_name]] <- read_sheets(sheet_name, config)
   }
   
-   # Not sure how metrics fits into this....
+  # TODO: 
+  # Not sure how metrics fits into this....
+  # Would be good to do something more like,
+  # if division and risk issue number are in the data then join
+  # then it would be a bit more flexible
   if("quality_risks_and_issues" %in% config$sheet_names & "Actions" %in% config$sheet_names){
     all_risk_data <- dplyr::full_join(data$quality_risks_and_issues, 
                                       data$Actions, 
