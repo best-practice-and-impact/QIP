@@ -24,7 +24,7 @@ data <- dplyr::bind_cols(data, combined_labels, labels)
 data$ownership_bucket_imputed <- dplyr::case_when(
           is.na(data$ownership_bucket) |
             data$ownership_bucket == "DQHub to decide" ~ "2. Control - With support",
-          .default = data$ownership_bucket)
+          TRUE ~ data$ownership_bucket)
 data$action_owner_division = dplyr::case_when(
           data$ownership_bucket_imputed == "2. Control - With support" | 
             data$ownership_bucket_imputed == "3. Outside control" ~ data$support_function,
