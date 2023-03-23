@@ -97,3 +97,14 @@ save_data <- function(data, config) {
   
   write.csv(data, config$output_path)
 }
+
+save_owner_data <- function(data_list, config) {
+  if (!dir.exists(sub('/[^/]*$', '', config$output_path))){
+    dir.create(sub('/[^/]*$', '', config$output_path))
+  }
+  
+  for (owner in names(data_list)){
+    write.csv(data_list[[owner]], paste0(sub('/[^/]*$', '', config$output_path),
+                           "/", owner, ".csv"))
+  }
+}
