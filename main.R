@@ -6,6 +6,7 @@ library(tidyr)
 library(janitor)
 source("collate_sheets.R")
 source("text_matching.R")
+source("create_tables.R")
 
 config <- yaml::read_yaml("config.yml")
 
