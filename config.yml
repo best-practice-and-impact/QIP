@@ -30,7 +30,9 @@ support_owner:
       "Analytical Standards and Pipelines",
       "BPAI",
       "DQhub",
-      "\\bRAPs?\\b"
+      "\\bRAPs?\\b",
+      "python",
+      "^R$"
       ] # concider adding python and ^R$ here too
     Digital_Service_Technology: [
       "Legacy systems",
@@ -45,7 +47,8 @@ support_owner:
       "non-automated systems",
       "Non-strategic systems",
       "\\bDAP\\b",
-      "transformation"
+      "transformation",
+      "^IDS$"
       ]
     Surveys: [
       "Surveys",
