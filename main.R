@@ -31,4 +31,7 @@ data$action_owner_division = dplyr::case_when(
 
 data$QA <- NA
 
+owner_data <- create_divisional_tables(data)
+save_owner_data(owner_data, config)
+
 save_data(data, config)
