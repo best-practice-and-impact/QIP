@@ -33,6 +33,8 @@ support_owner:
       "\\bRAPs?\\b",
       "python",
       "^R$",
+      "weights",
+      "deflator"
       "^MQD$",
       "reweighting"
       ] # concider adding python and ^R$ here too
@@ -53,7 +55,9 @@ support_owner:
       "^IDS$",
       "systems",
       "websites",
-      "dashboard"
+      "dashboard",
+      "^RTI$",
+      "legacy"
       ]
     Surveys: [
       "Surveys",
@@ -70,7 +74,9 @@ support_owner:
       "\\bLFS\\b",
       "^BERD$",
       "^LFS$",
-      "^LMS$"
+      "^LMS$",
+      "survey",
+      "Business Enterprise Research and Development"
       ]
     Data_Growth_Operations_or_Data_Acquisitions_Operations: [
       "Data suppliers",
