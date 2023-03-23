@@ -34,7 +34,7 @@ support_owner:
       "python",
       "^R$",
       "weights",
-      "deflator"
+      "deflator",
       "^MQD$",
       "reweighting"
       ] # concider adding python and ^R$ here too
