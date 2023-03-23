@@ -32,7 +32,9 @@ support_owner:
       "DQhub",
       "\\bRAPs?\\b",
       "python",
-      "^R$"
+      "^R$",
+      "^MQD$",
+      "reweighting"
       ] # concider adding python and ^R$ here too
     Digital_Service_Technology: [
       "Legacy systems",
@@ -48,7 +50,10 @@ support_owner:
       "Non-strategic systems",
       "\\bDAP\\b",
       "transformation",
-      "^IDS$"
+      "^IDS$",
+      "systems",
+      "websites",
+      "dashboard"
       ]
     Surveys: [
       "Surveys",
@@ -62,7 +67,10 @@ support_owner:
       "BDOD",
       "social surveys",
       "\\bLMS\\b",
-      "\\bLFS\\b"
+      "\\bLFS\\b",
+      "^BERD$",
+      "^LFS$",
+      "^LMS$"
       ]
     Data_Growth_Operations_or_Data_Acquisitions_Operations: [
       "Data suppliers",
@@ -90,7 +98,9 @@ support_owner:
       "\\bAPI\\b",
       "web development",
       "content",
-      "coherence"
+      "coherence",
+      "harmonised",
+      "websites"
       ]
     people_and_business_services: [
       "recruitment",
