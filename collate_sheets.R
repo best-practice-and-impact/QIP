@@ -88,6 +88,7 @@ join_data <- function(config) {
 #' Checks if the output file path exists, and if not creates it and then saves
 #' the dataframe to a csv file.
 #' 
+#' @param data data to be saved
 #' @param config `list` configuration, typically read in from a yaml config file
 #'  
 save_data <- function(data, config) {
@@ -98,13 +99,24 @@ save_data <- function(data, config) {
   write.csv(data, config$output_path)
 }
 
+#' @title Save Owner Data
+#' 
+#' @description 
+#' Checks if the output file path exists, and if not creates it and then saves
+#' the data frame to a csv file.
+#' 
+#' @param data_list a `list` of data frames to be saved.
+#' @param config `list` configuration, typically read in from a yaml config file
+#'  
 save_owner_data <- function(data_list, config) {
   if (!dir.exists(sub('/[^/]*$', '', config$output_path))){
     dir.create(sub('/[^/]*$', '', config$output_path))
   }
   
   for (owner in names(data_list)){
-    write.csv(data_list[[owner]], paste0(sub('/[^/]*$', '', config$output_path),
-                           "/", owner, ".csv"))
+    write.csv(data_list[[owner]], 
+              paste0(sub('/[^/]*$', '', config$output_path), "/", owner, ".csv"),
+              row.names = FALSE,
+              na = "")
   }
 }
