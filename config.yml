@@ -32,12 +32,12 @@ support_owner:
       "DQhub",
       "\\bRAPs?\\b",
       "python",
-      "^R$",
+      "\\bR\\b",
       "weights",
       "deflator",
-      "^MQD$",
+      "\\bMQD\\b",
       "reweighting"
-      ] # concider adding python and ^R$ here too
+      ]
     Digital_Service_Technology: [
       "Legacy systems",
       "technology",
@@ -52,11 +52,11 @@ support_owner:
       "Non-strategic systems",
       "\\bDAP\\b",
       "transformation",
-      "^IDS$",
+      "\\bIDS\\b",
       "systems",
       "websites",
       "dashboard",
-      "^RTI$",
+      "\\bRTI\\b",
       "legacy"
       ]
     Surveys: [
@@ -72,9 +72,9 @@ support_owner:
       "social surveys",
       "\\bLMS\\b",
       "\\bLFS\\b",
-      "^BERD$",
-      "^LFS$",
-      "^LMS$",
+      "\\bBERD\\b",
+      "\\bLFS\\b",
+      "\\bLMS\\b",
       "survey",
       "Business Enterprise Research and Development"
       ]
