@@ -10,4 +10,8 @@ match themes or support owners.
 
 - Not case sensitive
 - Specific about symbols e.g. "&" vs "and"
-- To find an exact match use "^insert_text_here$"
+- To find an exact word match use "//binsert_text_here//b"
+- To add an optional ending use "?"
+
+e.g. "//bRAPs?//b" would find "RAP", "rap", "RAPS", "RAPs", etc.
+but not "trap", "traps", or "rappers"
