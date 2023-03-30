@@ -114,7 +114,7 @@ save_owner_data <- function(data_list, config) {
   }
   
   for (owner in names(data_list)){
-    write.csv(format_owner_table(data_list[[owner]]), 
+    write.csv(data_list[[owner]], 
               paste0(sub('/[^/]*$', '', config$output_path), "/", owner, ".csv"),
               row.names = FALSE,
               na = "")
