@@ -98,7 +98,7 @@ format_date_cols <- function(data){
   # regex says "date" when not preceded or followed by other letters.
   # so it will not select titles containing, for example, "updates" 
   date_cols <- stringr::str_subset(names(data), "(?<![[:alpha:]])date(?![[:alpha:]])")
-  print(date_cols)
+
   output <- data %>% 
       dplyr::mutate(across(all_of(date_cols), 
                            ~ dplyr::case_when(
