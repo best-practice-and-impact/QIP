@@ -108,14 +108,15 @@ save_data <- function(data, config) {
 #' @param data_list a `list` of data frames to be saved.
 #' @param config `list` configuration, typically read in from a yaml config file
 #'  
-save_owner_data <- function(data_list, config) {
-  if (!dir.exists(sub('/[^/]*$', '', config$output_path))){
-    dir.create(sub('/[^/]*$', '', config$output_path))
+save_owner_data <- function(data_list, config, folder) {
+  if (!dir.exists(paste0(sub('/[^/]*$', '', config$output_path), "/", folder))){
+    dir.create(paste0(sub('/[^/]*$', '', config$output_path), "/", folder))
   }
   
   for (owner in names(data_list)){
     write.csv(data_list[[owner]], 
-              paste0(sub('/[^/]*$', '', config$output_path), "/", owner, ".csv"),
+              paste0(sub('/[^/]*$', '', config$output_path), 
+                     "/", folder, "/", owner, ".csv"),
               row.names = FALSE,
               na = "")
   }

@@ -35,11 +35,11 @@ data$QA <- NA
 owner_data <- create_owner_tables(data = data, 
                                   owner_bucket = "1. Control - Division", 
                                   config = config)
-save_owner_data(owner_data, config)
+save_owner_data(owner_data, config, "divisions")
 
 owner_data <- create_owner_tables(data = data, 
                                   owner_bucket = c("2. Control - With support", "3. Outside control"), 
                                   config = config)
-save_owner_data(owner_data, config)
+save_owner_data(owner_data, config, "support_functions")
 
 save_data(data, config)

@@ -30,12 +30,6 @@ create_owner_tables <- function(data, owner_bucket, config) {
                     "If the action is not delivered what would be the impact on the risk to quality?" = NA,
                     "Completed by" = NA)
   }
-
-  if ("1. Control - Division" %in% owner_bucket) {
-    names(output) <- paste0(names(output), "_1")
-  } else {
-    names(output) <- paste0(names(output), "_2")
-  }
   
   return(output)
 }
