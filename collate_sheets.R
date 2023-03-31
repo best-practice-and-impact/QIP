@@ -27,7 +27,7 @@ read_sheets <- function(sheet_name, config) {
   files <- paste0(config$input_path, "/",  files)
   
   all_tables <- lapply(files, function(file) {
-    data <- openxlsx::read.xlsx(file, sheet = sheet_name)
+    data <- openxlsx::read.xlsx(file, sheet = sheet_name, na.strings = c("NA", "?"))
     division_info <- openxlsx::read.xlsx(file, sheet = "Division_info")
     
     # Drop empty data sets because some divisions have no actions
@@ -38,7 +38,8 @@ read_sheets <- function(sheet_name, config) {
                       # some dates included so I think the following line could be improved
                       dplyr::across(dplyr::everything(), as.character)) %>% 
         janitor::clean_names() %>% 
-        tidyr::drop_na(risk_issue_number)
+        tidyr::drop_na(risk_issue_number) %>% 
+        format_date_cols()
       
       return(data)
     }
@@ -80,4 +81,30 @@ join_data <- function(config) {
   }
   
   return(all_risk_data)
+}
+
+#' @title Format Date Columns
+#' 
+#' @description 
+#' Change date columns so that they display as readable dates.
+#' Date columns are read as strings and so display days as 'days since 1.1.1970'
+#' These are not human friendly so we want them to display in human readable date format
+#' 
+#' @param data a data.frame
+#' 
+#' @return data
+#' 
+format_date_cols <- function(data){
+  # regex says "date" when not preceded or followed by other letters.
+  # so it will not select titles containing, for example, "updates" 
+  date_cols <- stringr::str_subset(names(data), "(?<![[:alpha:]])date(?![[:alpha:]])")
+  print(date_cols)
+  output <- data %>% 
+      dplyr::mutate(across(all_of(date_cols), 
+                           ~ dplyr::case_when(
+                             stringr::str_detect(.x, "[[:digit:]]{5}") ~ 
+                               lubridate::as_date(as.numeric(.x), origin = "1900-01-01"),
+                             TRUE ~ NA)))
+
+  return(output)
 }
