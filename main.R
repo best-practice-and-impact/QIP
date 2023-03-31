@@ -33,6 +33,8 @@ data$action_owner_division = dplyr::case_when(
 
 data$QA <- NA
 
+save_data(data, config)
+
 owner_data <- create_owner_tables(data = data, 
                                   owner_bucket = "1. Control - Division", 
                                   config = config)
@@ -42,5 +44,3 @@ owner_data <- create_owner_tables(data = data,
                                   owner_bucket = c("2. Control - With support", "3. Outside control"), 
                                   config = config)
 save_owner_data(owner_data, config, "support_functions")
-
-save_data(data, config)
