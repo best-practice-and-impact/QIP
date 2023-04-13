@@ -44,3 +44,4 @@ owner_data <- create_owner_tables(data = data,
                                   owner_bucket = c("2. Control - With support", "3. Outside control"), 
                                   config = config)
 save_owner_data(owner_data, config, "support_functions")
+
